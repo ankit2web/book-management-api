@@ -1,17 +1,16 @@
 const router = require("express").Router();
 const BookModel = require("./model");
+const validation = require("./validation/book.validation");
 
 // Update a book by ID
-router.put("/book/:id", async function (req, res) {
+router.put("/book/:id", validation(true), async function (req, res) {
   const bookId = req.params.id;
-  const { title, author, summary } = req.body;
   const updatedAt = Date.now();
 
   try {
     const updatedBook = await BookModel.findOneAndUpdate(
       { id: bookId },
-      { title, author, summary, updatedAt },
-      { new: true }
+      { ...req.body, updatedAt }
     );
 
     if (updatedBook) {
