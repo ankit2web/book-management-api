@@ -3,7 +3,7 @@ const BookModel = require("./model");
 const crypto = require("crypto");
 const validation = require("./validation/book.validation");
 
-router.post("/book", validation(false), async function (req, res) {
+router.post("/books", validation(false), async function (req, res) {
   const { isbn } = req.body;
   const book = await BookModel.findOne({ isbn });
   if(!book){
