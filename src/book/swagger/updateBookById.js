@@ -6,18 +6,21 @@
  *     description: Update a book record using its unique identifier.
  *     tags:
  *       - Book
- *     parameters:
- *       - name: id
- *         in: path
- *         required: true
- *         description: The unique identifier of the book to update.
- *         type: string
- *       - name: bookData
- *         in: body
- *         required: true
- *         description: The book data to update the existing book.
- *         schema:
- *           $ref: '#/definitions/BookUpdate'
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               author:
+ *                 type: string
+ *               summary:
+ *                 type: string
+ *               isbn:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Book updated successfully
