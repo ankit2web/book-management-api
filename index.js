@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors");
 const createError = require("http-errors");
 const routes = require('./src/routes');
 const db = require("./src/db");
@@ -12,6 +13,12 @@ const port = process.env.PORT || 5000; // Choose a port for your API
 
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
+
+const corsOptions = {
+  origin: "http://localhost:"+port,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions)); // Enable CORS (Cross-Origin Resource Sharing)
 
 // Define Swagger options
 const options = {
