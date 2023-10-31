@@ -96,6 +96,8 @@ http://localhost:5000/api-docs
 ## Deployment
 This API will be deployed to AWS EC2 for production use.
 
+Update: Deployed to t2.micro EC2 instance and is available at `http://3.85.132.65`
+
 ## Contact Details
 
 - Name: Ankit Pandey
