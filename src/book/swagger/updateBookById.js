@@ -6,6 +6,12 @@
  *     description: Update a book record using its unique identifier.
  *     tags:
  *       - Book
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: The unique identifier of the book to updated.
+ *         type: string
  *     requestBody:
  *       required: true
  *       content:
