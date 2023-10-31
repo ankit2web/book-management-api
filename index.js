@@ -28,7 +28,7 @@ const options = {
       },
       servers: [
         {
-          url: process.env.SERVER_URL || "http://localhost:5000",
+          url: "http://3.85.132.65", // Use localhost:5000 on local env
         },
       ],
     },
